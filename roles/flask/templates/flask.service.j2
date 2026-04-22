@@ -1,0 +1,21 @@
+[Unit]
+Description=Flask Application
+After=network.target
+
+[Service]
+User={{ app_user }}
+WorkingDirectory={{ app_dir }}
+Environment="PORT={{ app_port }}"
+ExecStart={{ app_dir }}/venv/bin/gunicorn \
+    --workers 2 \
+    --bind 0.0.0.0:{{ app_port }} \
+    --access-logfile - \
+    --error-logfile - \
+    app:app
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
