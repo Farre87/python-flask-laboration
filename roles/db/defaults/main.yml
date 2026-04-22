@@ -1,0 +1,3 @@
+db_name: flaskdb
+db_user: flaskuser
+db_password: flask123

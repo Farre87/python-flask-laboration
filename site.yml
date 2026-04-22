@@ -14,3 +14,11 @@
     - vars/main.yml
   roles:
     - nginx
+
+- name: Configure database server
+  hosts: database
+  become: yes
+  vars_files:
+    - vars/main.yml
+  roles:
+    - db
