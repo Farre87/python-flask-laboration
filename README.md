@@ -31,4 +31,4 @@ Webbläsare → nginx (lastbalanserare)
 - Ansible automatisering
 - nginx lastbalansering och failover
 - PostgreSQL databas
-- 
+
